@@ -422,6 +422,36 @@ namespace Freshdesk
 
         #endregion
 
+        #region Documentation
+        public IEnumerable<GetSolutionCategoriesResponse> GetSolutionCategories()
+        {
+            return DoRequest<IEnumerable<GetSolutionCategoriesResponse>>(UriForPath("/solution/categories.json"), "GET", null);
+        }
+
+        public GetSolutionCategoriesResponse GetSolutionCategory(long categoryId)
+        {
+
+            var call = string.Format("/solution/categories/{0}.json", categoryId);
+
+            return DoRequest<GetSolutionCategoriesResponse>(UriForPath(call), "GET", null);
+        }
+
+        public GetSolutionFolderResponse GetSolutionFolder(long categoryId, long folderId)
+        {
+            var call = string.Format("/solution/categories/{0}/folders/{1}.json", categoryId, folderId);
+            
+            return DoRequest<GetSolutionFolderResponse>(UriForPath(call), "GET", null);
+        }
+
+        public GetSolutionArticleResponse GetSolutionArticle(long categoryId, long folderId, long articleId)
+        {
+            var call = string.Format("/solution/categories/{0}/folders/{1}/articles/{2}.json", categoryId, folderId, articleId);
+            return DoRequest<GetSolutionArticleResponse>(UriForPath(call), "GET", null);
+        }
+        
+
+        #endregion
+
     }
 
 }

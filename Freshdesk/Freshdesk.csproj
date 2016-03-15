@@ -57,6 +57,9 @@
     <Compile Include="CreateCustomerRequest.cs" />
     <Compile Include="CreateTicketInfo.cs" />
     <Compile Include="CreateTicketRequest.cs" />
+    <Compile Include="GetSolutionArticleResponse.cs" />
+    <Compile Include="GetSolutionFolderResponse.cs" />
+    <Compile Include="GetSolutionCategoriesResponse.cs" />
     <Compile Include="GetUserResponse.cs" />
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="User.cs" />
